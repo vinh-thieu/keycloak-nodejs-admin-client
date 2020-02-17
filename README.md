@@ -98,6 +98,8 @@ Demo code: https://github.com/keycloak/keycloak-nodejs-admin-client/blob/master/
 - Get the top-level representation of the realm (`GET /{realm}`)
 - Update the top-level information of the realm (`PUT /{realm}`)
 - Delete the realm (`DELETE /{realm}`)
+- Get users management permissions
+- Enable users management permissions
 
 ### [Role](https://www.keycloak.org/docs-api/4.1/rest-api/index.html#_roles_resource)
 
@@ -327,6 +329,31 @@ Demo code: https://github.com/keycloak/keycloak-nodejs-admin-client/blob/master/
 - List offline sessions for a specific client (`GET /{realm}/clients/{id}/offline-sessions`)
 - Get user session count for a specific client (`GET /{realm}/clients/{id}/session-count`)
 - List offline session count for a specific client (`GET /{realm}/clients/{id}/offline-session-count`)
+
+### [Authentication Management: Required actions](https://www.keycloak.org/docs-api/8.0/rest-api/index.html#_authentication_management_resource)
+
+Demo code: https://github.com/keycloak/keycloak-nodejs-admin-client/blob/master/test/authenticationManagement.spec.ts
+
+- Register a new required action (`POST /{realm}/authentication/register-required-action`)
+- Get required actions. Returns a list of required actions. (`GET /{realm}/authentication/required-actions`)
+- Get required action for alias (`GET /{realm}/authentication/required-actions/{alias}`)
+- Update required action (`PUT /{realm}/authentication/required-actions/{alias}`)
+- Delete required action (`DELETE /{realm}/authentication/required-actions/{alias}`)
+- Lower required action’s priority (`POST /{realm}/authentication/required-actions/{alias}/lower-priority`)
+- Raise required action’s priority (`POST /{realm}/authentication/required-actions/{alias}/raise-priority`)
+- Get unregistered required actions Returns a list of unregistered required actions. (`GET /{realm}/authentication/unregistered-required-actions`)
+
+### [Authorization: Permission and Policy Management](https://www.keycloak.org/docs/latest/authorization_services/#_overview)
+
+Demo code: https://github.com/keycloak/keycloak-nodejs-admin-client/blob/master/test/clients.spec.ts#L852
+
+- Create permission (`POST /{realm}/clients/{id}/authz/resource-server/permission/{type}`)
+- Get permission (`GET /{realm}/clients/{id}/authz/resource-server/permission/{type}/{permissionId}`)
+- Update permission (`PUT /{realm}/clients/{id}/authz/resource-server/permission/{type}/{permissionId}`)
+- Delete policy/permission (`DELETE /{realm}/clients/{id}/authz/resource-server/policy/{policyId}`)
+- Create policy (`POST /{realm}/clients/{id}/authz/resource-server/policy/{type}`)
+- Update policy (`PUT /{realm}/clients/{id}/authz/resource-server/policy/{type}/{policyId}`)
+- Get policy (`GET /{realm}/clients/{id}/authz/resource-server/policy/{type}/{policyId}`)
 
 ## Not yet supported
 
