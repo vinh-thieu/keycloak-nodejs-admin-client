@@ -123,18 +123,6 @@ describe('Users', function () {
   });
 
   /**
-   * remove totp
-   */
-
-  it('should remove totp', async () => {
-    // todo: find a way to add totp from api
-    const userId = this.currentUser.id;
-    await this.kcAdminClient.users.removeTotp({
-      id: userId,
-    });
-  });
-
-  /**
    * reset password
    */
 
