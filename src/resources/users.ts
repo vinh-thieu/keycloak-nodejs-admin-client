@@ -254,15 +254,6 @@ export class Users extends Resource<{realm?: string}> {
   });
 
   /**
-   * remove totp
-   */
-  public removeTotp = this.makeRequest<{id: string}, void>({
-    method: 'PUT',
-    path: '/{id}/remove-totp',
-    urlParamKeys: ['id'],
-  });
-
-  /**
    * reset password
    */
   public resetPassword = this.makeRequest<
